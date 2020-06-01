@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '~> 5.1.6'
-gem 'bcrypt' # 今回追加するgemです
+gem 'bcrypt'
+gem 'faker'
 gem 'bootstrap-sass'
+gem 'will_paginate' # この行を追加してください。
+gem 'bootstrap-will_paginate' # この行を追加してください。
 gem 'puma',         '~> 3.7'
 gem 'sass-rails',   '~> 5.0'
 gem 'uglifier',     '>= 1.3.0'
@@ -22,3 +25,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+# Windows環境ではtzinfo-dataというgemを含める必要があります
+# Mac環境でもこのままでOKです
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

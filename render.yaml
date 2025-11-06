@@ -2,11 +2,13 @@ databases:
   - name: attendance-tutorial-db
     databaseName: attendance_tutorial_production
     user: attendance_tutorial
+    plan: free
 
 services:
   - type: web
     name: attendance-tutorial
     runtime: ruby
+    plan: free
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:

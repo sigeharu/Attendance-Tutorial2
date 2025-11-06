@@ -1,0 +1,26 @@
+databases:
+  - name: attendance-tutorial-db
+    databaseName: attendance_tutorial_production
+    user: attendance_tutorial
+
+services:
+  - type: web
+    name: attendance-tutorial
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: attendance-tutorial-db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: SECRET_KEY_BASE
+        generateValue: true
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_SERVE_STATIC_FILES
+        value: true
+      - key: RAILS_LOG_TO_STDOUT
+        value: true

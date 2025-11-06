@@ -11,6 +11,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'puma',         '~> 5.0'
 gem 'sass-rails',   '>= 6'
+gem 'jquery-rails'
 gem 'turbolinks',   '~> 5'
 gem 'jbuilder',     '~> 2.7'
 

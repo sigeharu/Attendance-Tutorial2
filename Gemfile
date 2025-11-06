@@ -14,8 +14,9 @@ gem 'sass-rails',   '>= 6'
 gem 'turbolinks',   '~> 5'
 gem 'jbuilder',     '~> 2.7'
 
+gem 'sqlite3', '~> 1.4'
+
 group :development, :test do
-  gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -26,10 +27,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'brakeman', require: false
   gem 'bundler-audit', require: false
-end
-
-group :production do
-  gem 'pg', '~> 1.1'
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
